@@ -74,5 +74,13 @@ class Test(unittest.TestCase):
         arr = self.gen_array(999999, 5000111222)
         self.assertEqual(5000111222, Q.odd_occurrences_in_array.solution(arr))
 
+    def test_frog_jmp(self):
+        self.assertEqual(Q.frog_jmp.solution(10, 85, 30), 3)
+        self.assertEqual(Q.frog_jmp.solution(0, 10, 1), 10)
+        self.assertEqual(Q.frog_jmp.solution(0, 10, 20), 1)
+        self.assertEqual(Q.frog_jmp.solution(10, 100, 10), 9)
+        self.assertEqual(Q.frog_jmp.solution(10, 10, 10), 0)
+        self.assertEqual(Q.frog_jmp.solution(9, 29, 10), 2)
+
 if __name__ == '__main__':
     unittest.main()
