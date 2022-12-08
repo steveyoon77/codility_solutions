@@ -81,6 +81,19 @@ class Test(unittest.TestCase):
         self.assertEqual(Q.frog_jmp.solution(10, 100, 10), 9)
         self.assertEqual(Q.frog_jmp.solution(10, 10, 10), 0)
         self.assertEqual(Q.frog_jmp.solution(9, 29, 10), 2)
+    
+    def test_perm_missing_elem(self):
+        int_range = (0, 100000)
+        self.assertEqual(Q.perm_missing_elem.solution([2, 3, 1, 5]), 4)
+        self.assertEqual(Q.perm_missing_elem.solution([2]), 1)
+        self.assertEqual(Q.perm_missing_elem.solution([1]), 2)
+        arr = [n for n in range(1, random.randint(*int_range))]
+        missing = random.randint(0, len(arr))
+        arr.remove(missing)
+        self.assertEqual(Q.perm_missing_elem.solution(arr), missing)
+        arr = [n for n in range(1, int_range[1] + 1)]
+        arr.pop()
+        self.assertEqual(Q.perm_missing_elem.solution(arr), int_range[1])
 
 if __name__ == '__main__':
     unittest.main()
